@@ -1,0 +1,124 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Tahoma', sans-serif;
+    background: #f5f5f7;
+    padding: 20px;
+}
+header {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 20px;
+    background: #f5f5f7;
+    padding: 10px 0;
+    z-index: 100;
+    align-items: center;
+}
+.search-wrapper {
+    flex: 1;
+    min-width: 200px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+    min-width: 130px;
+}
+.stats {
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 8px;
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px 8px;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: #1a73e8;
+}
+.card i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+.class-name {
+    font-size: 11px;
+    color: #666;
+    word-break: break-all;
+    direction: ltr;
+    font-family: monospace;
+}
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px;
+    color: #888;
+    font-size: 16px;
+}
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px;
+    color: #666;
+}
+.copy-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.copy-toast.show {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .card i {
+        font-size: 24px;
+    }
+    .class-name {
+        font-size: 10px;
+    }
+}
